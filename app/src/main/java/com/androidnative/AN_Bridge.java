@@ -15,7 +15,7 @@ import com.androidnative.features.AppInfoLoader;
 import com.androidnative.features.CameraAPI;
 import com.androidnative.features.common.AddressBookManager;
 import com.androidnative.features.common.AndroidNativeUtility;
-import com.androidnative.features.social.twitter.ANTwitter;
+//import com.androidnative.features.social.twitter.ANTwitter;
 import com.androidnative.utils.Base64;
 import com.androidnative.utils.Base64DecoderException;
 import com.androidnative.utils.NativeUtility;
@@ -112,69 +112,69 @@ public class AN_Bridge {
 	// --------------------------------------
 	// Twitter
 	// --------------------------------------
-
-	public static void TwitterInit(String consumer_key, String consumer_secret) {
-		try {
-			ANTwitter.GetInstance().Init(consumer_key, consumer_secret);
-		} catch (NoClassDefFoundError ex) {
-			Log.d("AndroidNative", "NoClassDefFoundError TwitterInit: " + ex.getMessage());
-		}
-		
-	}
-
-	public static void AuthificateUser() {
-		try {
-			ANTwitter.GetInstance().AuthificateUser();			
-		} catch (NoClassDefFoundError ex) {
-			Log.d("AndroidNative", "NoClassDefFoundError AuthificateUser: " + ex.getMessage());
-		}
-		
-	}
-
-	public static void LoadUserData() {
-		try {
-			ANTwitter.GetInstance().LoadUserData();
-		} catch (NoClassDefFoundError ex) {
-			Log.d("AndroidNative", "NoClassDefFoundError LoadUserData: " + ex.getMessage());
-		}
-		
-	}
-
-	public static void TwitterPost(String status) {
-		try {
-			ANTwitter.GetInstance().Twitt(status);
-		} catch (NoClassDefFoundError ex) {
-			Log.d("AndroidNative", "NoClassDefFoundError ANTwitter.GetInstance().Twitt(status);: " + ex.getMessage());
-		}
-		
-	}
-
-	public static void TwitterPostWithImage(String status, String data) throws IOException, Base64DecoderException {
-		
-		try {
-			Log.d("AndroidNative", "TwitterPostWithImage: ");
-			byte[] byteArray = Base64.decode(data);
-
-			File tempFile;
-			tempFile = new File(NativeUtility.GetLauncherActivity().getCacheDir(), "twitter_post_image");
-			fos = new FileOutputStream(tempFile);
-			fos.write(byteArray);
-
-			ANTwitter.GetInstance().Twitt(status, tempFile);
-		} catch (NoClassDefFoundError ex) {
-			Log.d("AndroidNative", "NoClassDefFoundError TwitterPostWithImage: " + ex.getMessage());
-		}
-		
-
-	}
-
-	public static void LogoutFromTwitter() {
-		try {
-			ANTwitter.GetInstance().logoutFromTwitter();
-		} catch (NoClassDefFoundError ex) {
-			Log.d("AndroidNative", "NoClassDefFoundError LogoutFromTwitter: " + ex.getMessage());
-		}
-	}
+//
+//	public static void TwitterInit(String consumer_key, String consumer_secret) {
+//		try {
+//			ANTwitter.GetInstance().Init(consumer_key, consumer_secret);
+//		} catch (NoClassDefFoundError ex) {
+//			Log.d("AndroidNative", "NoClassDefFoundError TwitterInit: " + ex.getMessage());
+//		}
+//
+//	}
+//
+//	public static void AuthificateUser() {
+//		try {
+//			ANTwitter.GetInstance().AuthificateUser();
+//		} catch (NoClassDefFoundError ex) {
+//			Log.d("AndroidNative", "NoClassDefFoundError AuthificateUser: " + ex.getMessage());
+//		}
+//
+//	}
+//
+//	public static void LoadUserData() {
+//		try {
+//			ANTwitter.GetInstance().LoadUserData();
+//		} catch (NoClassDefFoundError ex) {
+//			Log.d("AndroidNative", "NoClassDefFoundError LoadUserData: " + ex.getMessage());
+//		}
+//
+//	}
+//
+//	public static void TwitterPost(String status) {
+//		try {
+//			ANTwitter.GetInstance().Twitt(status);
+//		} catch (NoClassDefFoundError ex) {
+//			Log.d("AndroidNative", "NoClassDefFoundError ANTwitter.GetInstance().Twitt(status);: " + ex.getMessage());
+//		}
+//
+//	}
+//
+//	public static void TwitterPostWithImage(String status, String data) throws IOException, Base64DecoderException {
+//
+//		try {
+//			Log.d("AndroidNative", "TwitterPostWithImage: ");
+//			byte[] byteArray = Base64.decode(data);
+//
+//			File tempFile;
+//			tempFile = new File(NativeUtility.GetLauncherActivity().getCacheDir(), "twitter_post_image");
+//			fos = new FileOutputStream(tempFile);
+//			fos.write(byteArray);
+//
+//			ANTwitter.GetInstance().Twitt(status, tempFile);
+//		} catch (NoClassDefFoundError ex) {
+//			Log.d("AndroidNative", "NoClassDefFoundError TwitterPostWithImage: " + ex.getMessage());
+//		}
+//
+//
+//	}
+//
+//	public static void LogoutFromTwitter() {
+//		try {
+//			ANTwitter.GetInstance().logoutFromTwitter();
+//		} catch (NoClassDefFoundError ex) {
+//			Log.d("AndroidNative", "NoClassDefFoundError LogoutFromTwitter: " + ex.getMessage());
+//		}
+//	}
 	
 	
 

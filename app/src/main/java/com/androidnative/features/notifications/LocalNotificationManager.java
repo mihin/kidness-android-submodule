@@ -1,6 +1,6 @@
 package com.androidnative.features.notifications;
 
-import com.androidnative.gcm.ANCloudMessageService;
+//import com.androidnative.gcm.ANCloudMessageService;
 import com.androidnative.utils.NativeUtility;
 
 import android.app.NotificationManager;
@@ -44,6 +44,7 @@ public class LocalNotificationManager {
 	// Toast Notification
 	// --------------------------------------
 
+	@SuppressWarnings("WrongConstant")
 	public static void ShowToastNotification(String text, String duration) {
 		Context context = NativeUtility.GetApplicationContex();
 
@@ -55,52 +56,52 @@ public class LocalNotificationManager {
 	// Google Cloud Message
 	// --------------------------------------
 	
-	public static void InitPushNotifications(String icon, String sound, String vibration, String showWhenAppForeground, String replaceOldWithNew) {
-		try {
-			ANCloudMessageService.GetInstance().InitNotificationParams(icon, sound, Boolean.parseBoolean(vibration), Boolean.parseBoolean(showWhenAppForeground), Boolean.parseBoolean(replaceOldWithNew));
-		} catch (NoClassDefFoundError ex) {
-			Log.d("AndroidNative", "NoClassDefFoundError InitPushNotifications: " + ex.getMessage());
-		}
-	}
-	
-	public static void InitParsePushNotifications(String appId, String dotNetKey) {
-		try {
-			ANCloudMessageService.GetInstance().initParsePushNotifications(appId, dotNetKey);
-		} catch (NoClassDefFoundError ex) {
-			Log.d("AndroidNative", "NoClassDefFoundError GCMRgisterDevice: "
-					+ ex.getMessage());
-		}
-	}
-
-	public static void GCMRgisterDevice(String senderId) {
-		try {
-			ANCloudMessageService.GetInstance().registerDevice(senderId);
-		} catch (NoClassDefFoundError ex) {
-			Log.d("AndroidNative", "NoClassDefFoundError GCMRgisterDevice: "
-					+ ex.getMessage());
-		}
-
-	}
-
-	public static void GCMLoadLastMessage() {
-		try {
-			ANCloudMessageService.GetInstance().LoadLastMessage();
-		} catch (NoClassDefFoundError ex) {
-			Log.d("AndroidNative", "NoClassDefFoundError GCMLoadLastMessage: "
-					+ ex.getMessage());
-		}
-
-	}
-	
-	public static void GCMRemoveLastMessageInfo() {
-		try {
-			ANCloudMessageService.GetInstance().RemoveLastMessageInfo();
-		} catch (NoClassDefFoundError ex) {
-			Log.d("AndroidNative", "NoClassDefFoundError GCMLoadLastMessage: "
-					+ ex.getMessage());
-		}
-
-	}
+//	public static void InitPushNotifications(String icon, String sound, String vibration, String showWhenAppForeground, String replaceOldWithNew) {
+//		try {
+//			ANCloudMessageService.GetInstance().InitNotificationParams(icon, sound, Boolean.parseBoolean(vibration), Boolean.parseBoolean(showWhenAppForeground), Boolean.parseBoolean(replaceOldWithNew));
+//		} catch (NoClassDefFoundError ex) {
+//			Log.d("AndroidNative", "NoClassDefFoundError InitPushNotifications: " + ex.getMessage());
+//		}
+//	}
+//
+//	public static void InitParsePushNotifications(String appId, String dotNetKey) {
+//		try {
+//			ANCloudMessageService.GetInstance().initParsePushNotifications(appId, dotNetKey);
+//		} catch (NoClassDefFoundError ex) {
+//			Log.d("AndroidNative", "NoClassDefFoundError GCMRgisterDevice: "
+//					+ ex.getMessage());
+//		}
+//	}
+//
+//	public static void GCMRgisterDevice(String senderId) {
+//		try {
+//			ANCloudMessageService.GetInstance().registerDevice(senderId);
+//		} catch (NoClassDefFoundError ex) {
+//			Log.d("AndroidNative", "NoClassDefFoundError GCMRgisterDevice: "
+//					+ ex.getMessage());
+//		}
+//
+//	}
+//
+//	public static void GCMLoadLastMessage() {
+//		try {
+//			ANCloudMessageService.GetInstance().LoadLastMessage();
+//		} catch (NoClassDefFoundError ex) {
+//			Log.d("AndroidNative", "NoClassDefFoundError GCMLoadLastMessage: "
+//					+ ex.getMessage());
+//		}
+//
+//	}
+//
+//	public static void GCMRemoveLastMessageInfo() {
+//		try {
+//			ANCloudMessageService.GetInstance().RemoveLastMessageInfo();
+//		} catch (NoClassDefFoundError ex) {
+//			Log.d("AndroidNative", "NoClassDefFoundError GCMLoadLastMessage: "
+//					+ ex.getMessage());
+//		}
+//
+//	}
 	
 	
 	

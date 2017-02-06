@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.androidnative.features.CameraAPI;
-import com.androidnative.features.social.twitter.ANTwitter;
+//import com.androidnative.features.social.twitter.ANTwitter;
 import com.kbeanie.imagechooser.api.ChooserType;
 import com.unity3d.player.UnityPlayer;
 
@@ -80,7 +80,7 @@ public class AndroidNativeProxy extends Activity {
 				}
 				break;
 			case TWITTER_AUTH_TASK:
-				//Just nothing to do here. finish() method will do all the best © alexray
+				//Just nothing to do here. finish() method will do all the best
 				break;
 		}		
 		
@@ -97,7 +97,7 @@ public class AndroidNativeProxy extends Activity {
 		
 		try {
 			try {
-				ANTwitter.GetInstance().SetIntent(intent);
+//				ANTwitter.GetInstance().SetIntent(intent);
 			} catch (Throwable ex) {
 				Log.d("AndroidNative", "onNewIntent has failed");
 			}
