@@ -10,7 +10,7 @@
         <receiver android:name="com.androidnative.features.notifications.LocalNotificationReceiver" />
         <!--<service android:name="com.androidnative.gcm.GcmIntentService" />-->
         <activity android:name="com.androidnative.AndroidNativeBridge" android:label="@string/app_name"/>
-        <activity android:name="com.unity3d.player.UnityPlayerNativeActivity" android:label="@string/app_name">
+        <activity android:name="com.unity3d.player.UnityPlayerActivity" android:label="@string/app_name">
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
             <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
             <intent-filter>
