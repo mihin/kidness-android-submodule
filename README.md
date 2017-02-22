@@ -1,0 +1,1 @@
+# kidness-android-submodule
