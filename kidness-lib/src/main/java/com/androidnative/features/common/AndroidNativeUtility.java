@@ -68,6 +68,13 @@ public class AndroidNativeUtility {
 		
 		UnityPlayer.UnitySendMessage(UTILITY_LISTENER, "OnAndroidIdLoadedEvent", android_id);
 	}
+
+	public void GetGoogleAid() {
+		String android_id = Secure.getString(NativeUtility.GetApplicationContex().getContentResolver(),Secure.ANDROID_ID);
+		Log.d("AndroidNative", "google_aid: " + android_id);
+
+		UnityPlayer.UnitySendMessage(UTILITY_LISTENER, "OnGoogleAidLoadedEvent", android_id);
+	}
 	
 	public static void GetInternalStoragePath() {
         String path = "";

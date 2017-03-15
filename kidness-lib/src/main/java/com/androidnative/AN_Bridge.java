@@ -51,6 +51,10 @@ public class AN_Bridge {
 	public static void loadAndroidId() {
 		AndroidNativeUtility.GetInstance().GetAndroidId();
 	}
+
+	public static void loadGoogleAid() {
+		AndroidNativeUtility.GetInstance().GetGoogleAid();
+	}
 	
 	public static void SaveToGalalry(String ImageData, String name) {
 		try {
