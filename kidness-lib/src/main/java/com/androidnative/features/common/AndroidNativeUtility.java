@@ -1,5 +1,6 @@
 package com.androidnative.features.common;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InterfaceAddress;
 import java.net.NetworkInterface;
@@ -18,12 +19,16 @@ import android.net.DhcpInfo;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.AsyncTask;
 import android.os.Environment;
 import android.provider.Settings.Secure;
 import android.util.Log;
 
 import com.androidnative.AN_Bridge;
 import com.androidnative.utils.NativeUtility;
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.unity3d.player.UnityPlayer;
 
 public class AndroidNativeUtility {
@@ -70,10 +75,44 @@ public class AndroidNativeUtility {
 	}
 
 	public void GetGoogleAid() {
-		String android_id = Secure.getString(NativeUtility.GetApplicationContex().getContentResolver(),Secure.ANDROID_ID);
-		Log.d("AndroidNative", "google_aid: " + android_id);
+		AsyncTask<Void, Void, String> task = new AsyncTask<Void, Void, String>() {
+			@Override
+			protected String doInBackground(Void... params) {
+				AdvertisingIdClient.Info idInfo = null;
+				try {
+					idInfo = AdvertisingIdClient.getAdvertisingIdInfo(NativeUtility.GetApplicationContex());
+				} catch (GooglePlayServicesNotAvailableException e) {
+					e.printStackTrace();
+				} catch (GooglePlayServicesRepairableException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				String advertId = null;
+				try{
+					if (advertId != null)
+						advertId = idInfo.getId();
+				}catch (NullPointerException e){
+					e.printStackTrace();
+				}
 
-		UnityPlayer.UnitySendMessage(UTILITY_LISTENER, "OnGoogleAidLoadedEvent", android_id);
+				return advertId;
+			}
+
+			@Override
+			protected void onPostExecute(String google_aid) {
+				//Toast.makeText(NativeUtility.GetApplicationContex(), advertId, Toast.LENGTH_SHORT).show();
+
+				Log.d("AndroidNative", "google_aid: " + google_aid);
+				UnityPlayer.UnitySendMessage(UTILITY_LISTENER, "OnGoogleAidLoadedEvent", google_aid);
+			}
+
+		};
+		task.execute();
+
+		//String android_id = Secure.getString(NativeUtility.GetApplicationContex().getContentResolver(),Secure.ANDROID_ID);
+		//Log.d("AndroidNative", "google_aid: " + android_id);
+		//UnityPlayer.UnitySendMessage(UTILITY_LISTENER, "OnGoogleAidLoadedEvent", android_id);
 	}
 	
 	public static void GetInternalStoragePath() {
