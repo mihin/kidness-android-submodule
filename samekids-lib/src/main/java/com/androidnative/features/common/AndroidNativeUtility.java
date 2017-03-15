@@ -96,7 +96,7 @@ public class AndroidNativeUtility {
 					e.printStackTrace();
 				}
 
-				return advertId;
+				return advertId==null?"":advertId;
 			}
 
 			@Override

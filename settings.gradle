@@ -1,1 +1,1 @@
-include ':kidness-lib', ':kidness-testapp'
+include ':samekids-lib', ':samekids-testapp'

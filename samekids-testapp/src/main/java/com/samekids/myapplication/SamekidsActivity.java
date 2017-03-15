@@ -1,9 +1,9 @@
-package com.kidness.myapplication;
+package com.samekids.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class KidnessActivity extends AppCompatActivity {
+public class SamekidsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
