@@ -8,6 +8,6 @@ public class SamekidsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kidness);
+        setContentView(R.layout.activity_samekids);
     }
 }

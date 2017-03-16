@@ -85,24 +85,21 @@ public class AndroidNativeUtility {
 					e.printStackTrace();
 				} catch (GooglePlayServicesRepairableException e) {
 					e.printStackTrace();
-				} catch (IOException e) {
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				String advertId = null;
 				try{
-					if (advertId != null)
+					if (idInfo != null)
 						advertId = idInfo.getId();
 				}catch (NullPointerException e){
 					e.printStackTrace();
 				}
-
 				return advertId==null?"":advertId;
 			}
 
 			@Override
 			protected void onPostExecute(String google_aid) {
-				//Toast.makeText(NativeUtility.GetApplicationContex(), advertId, Toast.LENGTH_SHORT).show();
-
 				Log.d("AndroidNative", "google_aid: " + google_aid);
 				UnityPlayer.UnitySendMessage(UTILITY_LISTENER, "OnGoogleAidLoadedEvent", google_aid);
 			}
