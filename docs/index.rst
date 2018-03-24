@@ -15,6 +15,7 @@ Welcome to gplay-docs-test's documentation!
 Indices and tables
 ==================
 
+* :ref:`the-manual`
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
