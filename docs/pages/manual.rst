@@ -1,27 +1,27 @@
 .. _the-manual:
 
 ==============
-GStore IAP SDK
+GPlay IAP SDK
 ==============
 
-This is an Android library for inapp purchases in GStore based on
+This is an Android library for inapp purchases in GPlay based on
 https://github.com/anjlab/android-inapp-billing-v3. Make sure you have
-the latest GStore application installed on your phone (if not do it on
+the latest GPlay application installed on your phone (if not do it on
 https://play.gamecredits.com/. Press Download button on the left top
 corner of the page and get the link via SMS or QR-code).
 
 Getting Started
 ---------------
 
-Use **GStorePurchasing** class for all interactions with our store.
+Use **GPlayPurchasing** class for all interactions with our store.
 
 To initialize SDK call
 
 ::
 
-    init(Context context, String base64PublicKey, IGStorePurchaseCallback gStorePurchaseCallback)
+    init(Context context, String base64PublicKey, IGPlayPurchaseCallback gPlayPurchaseCallback)
 
-implement IGStorePurchaseCallback interface to receive purchases
+implement IGPlayPurchaseCallback interface to receive purchases
 callbacks.
 
 Use *queryInventory* method to fetch inapp data, sku ids should be
@@ -60,7 +60,7 @@ When the purchase is processed you can consume it by calling.
     consumeProducts(final List<Purchase> purchases)
 
 With your main Activity override onActivityResult method and forward
-receiving callbacks to the GStorePurchasing method.
+receiving callbacks to the GPlayPurchasing method.
 
 ::
 
@@ -86,7 +86,7 @@ To start Rate dialog for the current application use
 
     openRateDialog (String packageName)
 
-IGStorePurchaseCallback class:
+IGPlayPurchaseCallback class:
 
 ::
 
