@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>GStore IAP SDK &#8212; gplay-docs-test 0.2.1 documentation</title>
+    <title>GPlay IAP SDK &#8212; gplay-docs-test 0.2.1 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="../_static/documentation_options.js"></script>
@@ -29,21 +29,21 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gstore-iap-sdk">
-<span id="the-manual"></span><h1>GStore IAP SDK<a class="headerlink" href="#gstore-iap-sdk" title="Permalink to this headline">¶</a></h1>
-<p>This is an Android library for inapp purchases in GStore based on
+  <div class="section" id="gplay-iap-sdk">
+<span id="the-manual"></span><h1>GPlay IAP SDK<a class="headerlink" href="#gplay-iap-sdk" title="Permalink to this headline">¶</a></h1>
+<p>This is an Android library for inapp purchases in GPlay based on
 <a class="reference external" href="https://github.com/anjlab/android-inapp-billing-v3">https://github.com/anjlab/android-inapp-billing-v3</a>. Make sure you have
-the latest GStore application installed on your phone (if not do it on
+the latest GPlay application installed on your phone (if not do it on
 <a class="reference external" href="https://play.gamecredits.com/">https://play.gamecredits.com/</a>. Press Download button on the left top
 corner of the page and get the link via SMS or QR-code).</p>
 <div class="section" id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>Use <strong>GStorePurchasing</strong> class for all interactions with our store.</p>
+<p>Use <strong>GPlayPurchasing</strong> class for all interactions with our store.</p>
 <p>To initialize SDK call</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">init</span><span class="p">(</span><span class="n">Context</span> <span class="n">context</span><span class="p">,</span> <span class="n">String</span> <span class="n">base64PublicKey</span><span class="p">,</span> <span class="n">IGStorePurchaseCallback</span> <span class="n">gStorePurchaseCallback</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">init</span><span class="p">(</span><span class="n">Context</span> <span class="n">context</span><span class="p">,</span> <span class="n">String</span> <span class="n">base64PublicKey</span><span class="p">,</span> <span class="n">IGPlayPurchaseCallback</span> <span class="n">gPlayPurchaseCallback</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>implement IGStorePurchaseCallback interface to receive purchases
+<p>implement IGPlayPurchaseCallback interface to receive purchases
 callbacks.</p>
 <p>Use <em>queryInventory</em> method to fetch inapp data, sku ids should be
 passed.</p>
@@ -71,7 +71,7 @@ passed.</p>
 </pre></div>
 </div>
 <p>With your main Activity override onActivityResult method and forward
-receiving callbacks to the GStorePurchasing method.</p>
+receiving callbacks to the GPlayPurchasing method.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">onActivityResult</span><span class="p">(</span><span class="nb">int</span> <span class="n">requestCode</span><span class="p">,</span> <span class="nb">int</span> <span class="n">resultCode</span><span class="p">,</span> <span class="n">Intent</span> <span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -89,7 +89,7 @@ receiving callbacks to the GStorePurchasing method.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">openRateDialog</span> <span class="p">(</span><span class="n">String</span> <span class="n">packageName</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>IGStorePurchaseCallback class:</p>
+<p>IGPlayPurchaseCallback class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Activity</span> <span class="n">getActivity</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -128,7 +128,7 @@ receiving callbacks to the GStorePurchasing method.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">GStore IAP SDK</a><ul>
+<li><a class="reference internal" href="#">GPlay IAP SDK</a><ul>
 <li><a class="reference internal" href="#getting-started">Getting Started</a></li>
 </ul>
 </li>
